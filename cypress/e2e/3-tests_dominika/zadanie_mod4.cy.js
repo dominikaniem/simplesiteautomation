@@ -6,7 +6,7 @@
 //po atrybucie, np. div-class-wrapper
 
 
-describe("searchForTheElements", () => {
+describe("searchForElements", () => {
     beforeEach("openMainPage", () => {
       cy.visit("https://fabrykatestow.pl/");
     });
@@ -21,9 +21,9 @@ describe("searchForTheElements", () => {
  
     it("shouldFindFiveElementsByClass", () => {
       cy.get(".elementor-widget-image");
-      cy.get(".far fa-gem");
+      cy.get(".elementor-icon-box-title");
       cy.get(".elementor-icon-box-description");
-      cy.get(".attachment-large size-large wp-image-3491");
+      cy.get(".elementor-row");
       cy.get(".elementor-widget-container");
       
     });
@@ -32,17 +32,17 @@ describe("searchForTheElements", () => {
       cy.get('[href="https://fabrykatestow.pl/koszulki"]');
       cy.get('[src="https://fabrykatestow.pl/wp-content/uploads/2021/01/cropped-ft_logo_best.jpg"]');
       cy.get('[aria-label="Fabryka Testów"]');
-      cy.get('[data-element_type=”column]');
-      cy.get('[width="1024”][height=”1024”]');
+      cy.get('[data-element_type="column"]');
+      cy.get('[width="1024"][height="1024"]');
     })
 
 
     it("shouldFindFiveElementsByText", () => {
       cy.get('span').contains("ZAPISZ MNIE NA NEWSLETTER")
       cy.get('h2').contains("SZKOŁa ONLINE DLA TESTERÓW")
-      cy.get('class').contains("Pomagamy na Twojej testerskiej drodze")
+      cy.get('a').contains("Newsletter")
       cy.get('a').contains("Darmowe dokumenty")
-      cy.get('span').contains("POKAŻ CZEGO CIĘ NAUCZĘ")
+      cy.get('span').contains("POKAŻ CZEGO SIĘ NAUCZĘ")
 
 })
 
