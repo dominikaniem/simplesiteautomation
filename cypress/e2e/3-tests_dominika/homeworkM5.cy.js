@@ -1,11 +1,10 @@
 describe("take screenshot of cdp-course", () => {
-   
-   it('enters main page' , () => {
-cy.visit('https://fabrykatestow.pl/')
-   })
-    
-it('open section and find cdp' , () => {
-    })
+   it('enter main page and take screenshot' , () => {
 
-    
-}) 
+cy.visit('https://fabrykatestow.pl/')
+cy.get('#menu-item-1871').click()    
+cy.contains('POKAŻ CZEGO SIĘ NAUCZĘ').eq(0).click()
+cy.get('.elementor-background-overlay').eq(1).scrollIntoView().screenshot('homeworkscreen')
+
+})
+   })
