@@ -14,10 +14,14 @@ clickChecxboxTab(){
     cy.get(checboxHeader).click()
 
     }
-clickHoverTab(){
+    
+clickHoversTab(){
     cy.get(hoversHeader).click()
 }
 
+clickDropdownListTab(){
+    cy.get(dropdownListHeader).click()
+}
 
 visitPage() {
     const url = new Urls()
