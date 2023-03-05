@@ -1,11 +1,15 @@
 import HomePage from "../../page-objects/homePage"
-import InputPage from "../../page-objects/inputPage"
 import CheckboxPage from "../../page-objects/checkboxPage"
-import DropdownListPage from "../../page-objects/dropdownListPage"
 import HoversPage from "../../page-objects/hoversPage"
-import IframePage from "../../page-objects/iframePage"
+import InputPage from "../../page-objects/inputPage"
 import BasicAuthPage from "../../page-objects/basicAuthPage"
+import FormPage from "../../page-objects/formPage"
+import DropdownListPage from "../../page-objects/dropdownListPage"
 import KeyPressPage from "../../page-objects/keyPressPage"
+import AddRemovePage from "../../page-objects/addRemovePage"
+import IframePage from "../../page-objects/iframePage"
+
+
 
 
 describe('Simple Site test automation', () => {
@@ -15,12 +19,12 @@ describe('Simple Site test automation', () => {
     })
     
      it('test checkbox' , function () {
-        const homePage = new HomePage();
-        homePage.clickChecxboxTab()
+    const homePage = new HomePage();
+    homePage.clickChecxboxTab()
 
-        const checkboxPage = new CheckboxPage();
-        checkboxPage.checkFirstCheckbox()
-        checkboxPage.uncheckLastCheckbox()
+    const checkboxPage = new CheckboxPage();
+    checkboxPage.checkFirstCheckbox()
+    checkboxPage.uncheckLastCheckbox()
 
     })
 
@@ -34,17 +38,18 @@ describe('Simple Site test automation', () => {
     homePage.clickHoversTab()
 
     const hoversPage = new HoversPage();
-    hoversPage.hoverOverElement()
+    hoversPage.hoverOverElement1()
+    hoversPage.hoverOverElement3()
 
     })
 
     it('test inputs' , function () {
-       const homePage = new HomePage();
-       homePage.clickInputsTab()
+    const homePage = new HomePage();
+    homePage.clickInputsTab()
     
-        const inputPage = new InputPage();
-        inputPage.typeNumberIntoField()
-        inputPage.typeLettersIntoField()
+    const inputPage = new InputPage();
+    inputPage.typeNumberIntoField()
+    inputPage.typeLettersIntoField()
     
     })
 
@@ -57,6 +62,18 @@ describe('Simple Site test automation', () => {
     basicAuthPage.fillCorrectCredentials()
 
    })
+   
+   it('test form' , function () {
+    const homePage = new HomePage();
+    homePage.clickFormHeader()
+
+    const formPage = new FormPage();
+    formPage.fillFirstName()
+    formPage.fillLastName()
+    formPage.pressSubmitButton()
+
+    })
+
 
     it('test dropdown list' , function () {
     const homePage = new HomePage();
@@ -67,23 +84,29 @@ describe('Simple Site test automation', () => {
     dropdownListPage.chooseDropdpownListSecondOption()
 
     })
+
     it('test key presses' , function () {
-        const homePage = new HomePage();
-        homePage.clickKeyPressTab()
+    const homePage = new HomePage();
+    homePage.clickKeyPressTab()
 
-        const keyPressPage = new KeyPressPage()
-        keyPressPage.pressShift()
-
+    const keyPressPage = new KeyPressPage();
+    keyPressPage.pressFLetter()
+    keyPressPage.press7Number()
+    keyPressPage.pressShift()
     })
 
-
-    // it('test iframe' , function () {
+    // it('test drag and drop' , function () {
     // const homePage = new HomePage();
-    // homePage.clickIframe()
-
-    // const iframePage = new IframePage();
-    // iframePage.getIframe()
-
+    // homePage.clickDragAndDrop()
     // })
+
+    it('test add and remove' , function () {
+        const homePage = new HomePage();
+        homePage.clickAddRemove()
+    
+        const addRemovePage = new AddRemovePage();
+        addRemovePage.clickAddElement()
+        addRemovePage.removeElement()
+        })
 
 })

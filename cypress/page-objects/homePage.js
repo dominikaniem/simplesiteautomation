@@ -51,7 +51,7 @@ clickDragAndDrop(){
 }
 
 clickAddRemove(){
-    cy.get(addRemove).click()
+    cy.get(addRemoveHeader).click()
 }
 
 clickStatusCodes(){
