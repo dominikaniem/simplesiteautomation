@@ -3,12 +3,20 @@ const addedButton = '.added-manually'
 
 class AddRemovePage {
     clickAddElement() {
-        cy.get(addElement).click()
+        cy.get(addElement).dblclick()
         cy.get(addedButton).should('be.visible')
+        cy.get(addedButton).eq(1).should('be.visible')
+        cy.wait(1000)
     }
 
     removeElement () {
-        cy.get(addedButton).click()
+        cy.get(addedButton).eq(1).click()
+        cy.get(addedButton).eq(0).should('be.visible')
+    }
+
+    removeAll () {
+        cy.get(addedButton).eq(0).click()
+        cy.get(addedButton).should('have.lengthOf' , 0)
     }
 }
 

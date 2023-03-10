@@ -1,7 +1,9 @@
 const url = 'http://simpletestsite.fabrykatestow.pl'
 const iframe = 'iframe'
 const iframeHeader = '#iframe-header'
-const button = "#simpleButton1"
+const button1 = "#simpleButton1"
+const button2 = "#simplebutton2"
+const message = '#whichButtonIsClickedMessage'
 
 describe('my 7th scenario', () => {
     it('' , function () {
@@ -14,7 +16,8 @@ describe('my 7th scenario', () => {
         .should('be.visible')
         .then(cy.wrap)
 
-        iframeTest.find(button).click()
+        iframeTest.find(button1).click()
+        iframeTest.find(button2).click()
     })
 })
 

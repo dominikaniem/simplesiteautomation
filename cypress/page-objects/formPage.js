@@ -21,6 +21,7 @@ pressSubmitButton () {
     cy.on('window:alert', (text) => {
         expect(text).to.contains('success');
     })
+    cy.wait(1000) 
 }
 }
 

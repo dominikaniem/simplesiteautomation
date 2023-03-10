@@ -8,6 +8,7 @@ import DropdownListPage from "../../page-objects/dropdownListPage"
 import KeyPressPage from "../../page-objects/keyPressPage"
 import AddRemovePage from "../../page-objects/addRemovePage"
 import IframePage from "../../page-objects/iframePage"
+import StatusCodePage from "../../page-objects/statusCodePage"
 
 
 
@@ -74,7 +75,6 @@ describe('Simple Site test automation', () => {
 
     })
 
-
     it('test dropdown list' , function () {
     const homePage = new HomePage();
     homePage.clickDropdownListTab()
@@ -101,12 +101,33 @@ describe('Simple Site test automation', () => {
     // })
 
     it('test add and remove' , function () {
-        const homePage = new HomePage();
-        homePage.clickAddRemove()
+    const homePage = new HomePage();
+    homePage.clickAddRemove()
     
-        const addRemovePage = new AddRemovePage();
-        addRemovePage.clickAddElement()
-        addRemovePage.removeElement()
-        })
+    const addRemovePage = new AddRemovePage();
+    addRemovePage.clickAddElement()
+    addRemovePage.removeElement()
+    addRemovePage.removeAll()
+    })
+
+    it('test status codes' , function () {
+    const homePage = new HomePage();
+    homePage.clickStatusCodes()
+    
+    const statusCodePage = new StatusCodePage();
+    statusCodePage.evokeCode200()
+    })
+
+    it('test iframe' , function () {
+    const homePage = new HomePage();
+    homePage.clickIframe()
+
+    const iframePage = new IframePage();
+    iframePage.testButton1()
+    cy.wait(2000)
+    iframePage.testButton2()
+    cy.wait(2000)
+
+    })
 
 })
