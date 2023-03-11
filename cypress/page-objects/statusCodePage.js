@@ -1,25 +1,50 @@
 const code200 = '#200siteAnchor'
-const code300 = '#300siteAnchor'
-const code400 = '#400siteAnchor'
+const code305 = '#305siteAnchor'
+const code404 = '#404siteAnchor'
 const code500 = '#500siteAnchor'
 
 class StatusCodePage {
-    evokeCode200 () {
-    cy.get(code200).click()
+    testCode200 () {
+        cy.get(code200).invoke('attr', 'href').then(href => {
+        cy.request(href).then((response) => {
+        expect(response.status).to.eq(200); //https://stackoverflow.com/questions/48348354/cypress-get-href-attribute
+         })
+     })
     }
 
-    evokeCode300 () {
-    cy.get(code300).click()
+    testCode305 () {
+        cy.get(code305).invoke('attr', 'href').then((href) => {
+        cy.request({
+        url: href,
+        followRedirect: false, 
+        }).then((response) => {
+        expect(response.status).to.eq(305);
+        });
+    });
+}
+    
+    testCode404 () {
+        cy.get(code404).invoke('attr', 'href').then((href) =>{ 
+        cy.request({
+        url: href,                
+        failOnStatusCode: false
+        }).then((response) => {
+        expect(response.status).to.eq(404);
+            });
+        });
     }
-
-    evokeCode400 () {
-    cy.get(code400).click()
+    testCode500 () {
+        cy.get(code500).invoke('attr', 'href').then((href) =>{ 
+        cy.request({
+        url: href,                
+        failOnStatusCode: false
+        }).then((response) => {
+        expect(response.status).to.eq(500);
+            });
+        });
     }
-
-    evokeCode500 () {
-    cy.get(code500).click()    
-    }
-
+     
 }
 
-export default StatusCodePage;
+
+ export default StatusCodePage;

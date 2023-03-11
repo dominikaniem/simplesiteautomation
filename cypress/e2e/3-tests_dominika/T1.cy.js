@@ -11,8 +11,6 @@ import IframePage from "../../page-objects/iframePage"
 import StatusCodePage from "../../page-objects/statusCodePage"
 
 
-
-
 describe('Simple Site test automation', () => {
     
     beforeEach(()=>{
@@ -115,7 +113,10 @@ describe('Simple Site test automation', () => {
     homePage.clickStatusCodes()
     
     const statusCodePage = new StatusCodePage();
-    statusCodePage.evokeCode200()
+    statusCodePage.testCode200()
+    statusCodePage.testCode305()
+    statusCodePage.testCode404()
+    statusCodePage.testCode500()
     })
 
     it('test iframe' , function () {
