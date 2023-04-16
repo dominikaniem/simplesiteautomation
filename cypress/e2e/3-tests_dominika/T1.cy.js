@@ -7,7 +7,7 @@ import FormPage from "../../page-objects/formPage"
 import DropdownListPage from "../../page-objects/dropdownListPage"
 import KeyPressPage from "../../page-objects/keyPressPage"
 import AddRemovePage from "../../page-objects/addRemovePage"
-import IframePage from "../../page-objects/iframePage"
+import IframePage from  "../../page-objects/iframeTestPage"
 import StatusCodePage from "../../page-objects/statusCodePage"
 
 
@@ -27,10 +27,10 @@ describe('Simple Site test automation', () => {
 
     })
 
-    // it('test datepicker' , function () {
-    //     const homePage = new HomePage();
-    //     homePage.clickDatepickerTab()
-    // })
+//     // it('test datepicker' , function () {
+//     //     const homePage = new HomePage();
+//     //     homePage.clickDatepickerTab()
+//     // })
 
     it('test hover' , function () {
     const homePage = new HomePage();
