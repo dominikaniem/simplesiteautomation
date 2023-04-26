@@ -113,10 +113,10 @@ describe('Simple Site test automation', () => {
     homePage.clickStatusCodes()
     
     const statusCodePage = new StatusCodePage();
-    statusCodePage.testCode200();
-    statusCodePage.testCode305();
-    statusCodePage.testCode404();
-    statusCodePage.testCode500();
+    statusCodePage.testCode200()
+    statusCodePage.testCode305()
+    statusCodePage.testCode404()
+    statusCodePage.testCode500()
     })
 
     it('test iframe' , function () {
