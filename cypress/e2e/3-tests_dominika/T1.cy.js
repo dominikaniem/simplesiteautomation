@@ -125,9 +125,7 @@ describe('Simple Site test automation', () => {
 
     const iframePage = new IframePage();
     iframePage.testButton1()
-    cy.wait(2000)
     iframePage.testButton2()
-    cy.wait(2000)
 
     })
 

@@ -6,7 +6,6 @@ class AddRemovePage {
         cy.get(addElement).dblclick()
         cy.get(addedButton).should('be.visible')
         cy.get(addedButton).eq(1).should('be.visible')
-        cy.wait(1000)
     }
 
     removeElement () {
@@ -19,5 +18,4 @@ class AddRemovePage {
         cy.get(addedButton).should('have.lengthOf' , 0)
     }
 }
-
 export default AddRemovePage;

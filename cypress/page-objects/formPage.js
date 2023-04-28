@@ -12,8 +12,7 @@ fillFirstName () {
 
 fillLastName () {
     cy.get(lastName).clear()
-    cy.get(lastName).type('userski').should('have.value','userski')
-    cy.wait(1000)  
+    cy.get(lastName).type('userski').should('have.value','userski') 
 }
 
 pressSubmitButton () {
@@ -21,7 +20,6 @@ pressSubmitButton () {
     cy.on('window:alert', (text) => {
         expect(text).to.contains('success');
     })
-    cy.wait(1000) 
 }
 }
 
